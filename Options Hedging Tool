@@ -31,3 +31,8 @@ calculate_call_delta(S, K, T, r, sigma): Calculates the delta for a call option 
 select_out_of_money_call_options(calls, S, percentage=0.9): Selects out-of-the-money call options with a strike price less than or equal to 90% of the current asset price.
 get_options_chain(ticker): Retrieves the options chain for a given ticker from Yahoo Finance.
 main_call(ticker): Main function to calculate the required call options to hedge the portfolio for a given ticker.
+###Put Options Script###
+calculate_put_delta(S, K, T, r, sigma): Calculates the delta for a put option using the Black-Scholes model.
+select_out_of_money_put_option(puts, S, percentage=1.1): Selects out-of-the-money put options with a strike price greater than or equal to 110% of the current asset price.
+get_options_chain(ticker): Retrieves the options chain for a given ticker from Yahoo Finance.
+main_put(ticker): Main function to calculate the required put options to hedge the portfolio for a given ticker.
