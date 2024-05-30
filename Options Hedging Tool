@@ -1,0 +1,33 @@
+Options Hedging Tool
+This repository contains scripts to calculate the number of VIX and stock option contracts needed to hedge a portfolio using the Black-Scholes model. The scripts select out-of-the-money options and calculate the delta for the selected options.
+
+###Prerequisites###
+Make sure you have the following Python packages installed:
+
+yfinance
+pandas
+numpy
+scipy
+
+###Usage###
+Parameters
+Before running the scripts, you need to update the following parameters in the main_call and main_put functions:
+
+portfolio_value: The value of your portfolio. Replace the placeholder value with your actual portfolio value.
+portfolio_volatility: The standard deviation of your portfolio's returns. Replace the placeholder value with your actual portfolio volatility.
+S: The current price of VIX or the asset. Update this value with the current price.
+
+###Output###
+The scripts will output the following information:
+@You will be prompted to enter the ticker symbol of the asset.@
+Strike Price: The strike price of the selected option.
+Options to Hedge: The number of option contracts required to hedge your portfolio.
+
+###Functions###
+The scripts contain the following main functions:
+
+###Call Options Script###
+calculate_call_delta(S, K, T, r, sigma): Calculates the delta for a call option using the Black-Scholes model.
+select_out_of_money_call_options(calls, S, percentage=0.9): Selects out-of-the-money call options with a strike price less than or equal to 90% of the current asset price.
+get_options_chain(ticker): Retrieves the options chain for a given ticker from Yahoo Finance.
+main_call(ticker): Main function to calculate the required call options to hedge the portfolio for a given ticker.
